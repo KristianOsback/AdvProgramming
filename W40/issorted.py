@@ -15,7 +15,19 @@ def issorted(lst):
 
     """
 
-    return False
+    if len(lst) <= 1:
+        return True
+    
+    i_last, *rest = lst
+    for i in rest:
+        if i_last <= i:
+            i_last = i
+        else:
+            return False
+    
+    
+    
+    return True
 
 
 # this helps us test the code, is only run if we
